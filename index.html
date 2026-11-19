@@ -60,7 +60,7 @@ textarea{width:100%;resize:vertical;border-radius:14px;min-height:64px}
 .cat{margin-bottom:18px}
 .cat h4{margin:0 0 8px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--g);display:flex;align-items:center;gap:8px}
 .cat h4:after{content:"";flex:1;height:1px;background:var(--ln)}
-.row{display:grid;grid-template-columns:1fr 110px 150px;gap:12px;align-items:center;padding:10px 12px;border-radius:14px;background:#fff;border:1px solid var(--ln);margin-bottom:6px;transition:.15s}
+.row{display:grid;grid-template-columns:1fr 150px;gap:12px;align-items:center;padding:10px 12px;border-radius:14px;background:#fff;border:1px solid var(--ln);margin-bottom:6px;transition:.15s}
 .row:hover{border-color:var(--y)}
 .row.low{background:#fffaf0;border-color:#f3d48a}.row.has{box-shadow:inset 4px 0 0 var(--y)}
 .row .n{font-weight:600}.row .u{color:var(--g);font-size:12.5px}
@@ -95,7 +95,7 @@ table.h tr{cursor:pointer}table.h tr:hover td{background:#fcfaf1}
 @keyframes pop{from{transform:scale(.2);opacity:0}}
 .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--k);color:var(--y);padding:12px 22px;border-radius:300px;font-weight:600;z-index:200;box-shadow:var(--shh)}
 .f{text-align:center;color:var(--g);font-size:12px;padding:20px}
-@media(max-width:900px){.order{grid-template-columns:1fr}.side{position:static}.top{flex-wrap:wrap;padding:8px 14px}.nav{order:3;width:100%;overflow:auto}.row{grid-template-columns:1fr 110px}.row .price{display:none}.hero .cups{display:none}.content{padding:0 14px 60px}}
+@media(max-width:900px){.order{grid-template-columns:1fr}.side{position:static}.top{flex-wrap:wrap;padding:8px 14px}.nav{order:3;width:100%;overflow:auto}.row{grid-template-columns:1fr 110px}.hero .cups{display:none}.content{padding:0 14px 60px}}
 .seg{display:flex;background:#f1eee3;border-radius:300px;padding:3px;flex:none}.seg button{border:0;background:none;padding:7px 14px;border-radius:300px;font-weight:600;font-size:12.5px;cursor:pointer;white-space:nowrap}.seg button.on{background:var(--k);color:var(--y)}.tbw{overflow-x:auto}.who{flex-wrap:wrap;justify-content:flex-end}@media(max-width:900px){.who{width:100%;justify-content:space-between}.seg{order:-1}}
 </style></head><body>
 <div class="top"><img class="lg" src="data:image/jpeg;base64,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g1kTBNZDepyFhOAi8lWFwyQIQI6I0e7L2ZRBoAE/9T4FsiWat8IUwkc7KRgK4BYfSpSIiIksv2/YPmTHK79lYIwf3lNlEXyizOj9g7qc5FvyajkC4JexFXfFS0pu/wDvP//aAAwDAQACAAMAAAAQ8888888888888888888888888888888888880480888888888888888888888cUU8w8888888888888888880oEVUU0888888888888888888Y+Vd6gg08888888888888888okvP+ttIsc88888888888888888+zDe/Mc8888888888888888884F1HV88888888888IccE4A88E/Zi904Yo8EoMAs88QUAsscIUJ85Md84wsscE4gI08Mcscc8Mcd+qCG8MccsMMsM888888888888881X888888888888888888888888888888888888//EACgRAAIBBAAEBQUAAAAAAAAAAAERACExQPBBUWGBEFBxweFgkaGx8f/aAAgBAwEBPxD6XBEPHAdBAI9b28AAHrGMVWzvCNtv8gU1CCUqA4tTHT5iE6wEpHiCd+0AZbl+n7SgBtvnFNATGAdpCuA9O8BBIdo47xxAARaEs0lDrafmWjy9nBZjBOIC6AiZSOtal4esF3dvitzhLjjiR59oSOQSqi3aQBCPJf/EACgRAAEDAgQFBQEAAAAAAAAAAAEAESEx8EBRYcFBcZGhsVBggdHh8f/aAAgBAgEBPxD2uRBANThyQA5ROYb26HVkaXvd0ZEasa/dR3QwfCkWAW07KoN/2qIizzpPhAgdCpNo/COmFixyPmN0+BkiACSOBAvqiSCM4+W3KkZ5+W2wpigIgccNjO6D8TFTzYgAJGp+uqcLpGEANXQICBJU62fg9lE827JgAXE+WTRhFMZvjRG4KNe2dVQpD91R5bT5bC6SAAooRSlHM89NULi3Hc4gFCX0/G7lFGD6L//EACoQAQACAQQBAwUBAAIDAAAAAAERIQAxQVFhcRCBkSBQobHwwdHxQGBw/9oACAEBAAE/EP8A5ZCT4svqmgsoh9HJ1FRjDjaVL36mNAYDWtIUlRMTDf2zgrk1uXgLnpnhRBpCjCVSJ7Z/HEf8+JFa0mYQQawKE9mJhAwNhmHawHbmt9kIVxPseJ+0goyKHIsTE0RAlU47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" alt="Coffee Crossing">
@@ -109,57 +109,219 @@ const STORES=[
 {n:"Ivy",t:"Sellersburg",mgr:"Jenna Hall",f:.85},{n:"Lena",t:"Floyds Knobs",mgr:"Marcus Reed",f:1.1},
 {n:"Jeff",t:"Jeffersonville",mgr:"Priya Shah",f:1.2},{n:"Bakery",t:"New Albany",mgr:"Sam Ortiz",f:.75},
 {n:"DJ",t:"Jeffersonville",mgr:"Dana White",f:.95},{n:"Scottie",t:"Floyds Knobs",mgr:"Chris Nguyen",f:.9}];
-const CATS=["Coffee Beans & Tea","Sauces","Milk & Dairy","Cups, Lids & Sleeves","Bakery","Food & Pantry","Cleaning & Paper Goods"];
-// id,cat,name,unit,price,par(per store),warehouse on hand,usage cases/day (all stores),lead days,incoming eta (days from today)|0,reason
+// Catalog loaded from Dan's Warehouse Google Sheet (Nov 19). Prices below are placeholders kept only for a future warehouse view; managers never see them.
+const CATS=["Syrups", "Sauces", "Powders", "Smoothie Mix", "Paper Cups & Lids", "Plastic Cups & Lids", "Alt-Milks", "Tea Concentrates", "Energy", "Sweeteners", "Boylan", "Misc.", "Pumps", "Cleaners", "Tea & Retail: Teasource", "Tea & Retail: East Indies", "Tea & Retail: Maya", "Tea & Retail: Tea", "SAMS", "SAMS: Paper & Plastic", "SAMS: Other", "SAMS: Cleaning", "Kroger/GFS", "GFS", "Retail", "Retail Teas", "Diner Mugs", "Cold Cup w/straw", "Vafels", "Office Supplies", "For DJ Only (Weekdays Only)"];
+// id,cat,name,unit,price (hidden from managers),par(per store),warehouse on hand,usage/day (all stores),lead days,incoming eta (days from today)|0,reason
 const P=[
-["b1","Coffee Beans & Tea","House Blend Whole Bean","case · 6 × 2 lb bags",78,3,38,3.4,7,0,""],
-["b2","Coffee Beans & Tea","Brighten Dark Roast","case · 6 × 2 lb bags",82,2,22,2.2,7,0,""],
-["b3","Coffee Beans & Tea","Decaf Swiss Water","case · 6 × 2 lb bags",88,1,6,.5,10,3,"Roaster shipment lands in 3 days"],
-["b4","Coffee Beans & Tea","Espresso Roast (5 lb)","case · 4 × 5 lb bags",118,3,44,3.6,7,0,""],
-["b5","Coffee Beans & Tea","Cold Brew Grounds (coarse)","case · 4 × 5 lb bags",96,1,9,.9,7,0,""],
-["b6","Coffee Beans & Tea","Chai Concentrate","case · 6 × 32 oz",48,1,15,.7,5,0,""],
-["b7","Coffee Beans & Tea","Matcha Powder","case · 12 × 1 lb tins",132,1,0,.2,14,6,"Sold out at supplier, next shipment due in 6 days"],
-["b8","Coffee Beans & Tea","Iced Tea Bags (black)","case · 4 × 48 ct",36,1,18,.6,5,0,""],
-["s1","Sauces","Vanilla Sauce","bottle · 64 oz pump bottle",14,3,40,1.8,6,0,""],
-["s2","Sauces","Caramel Sauce","jug · half gallon",17,3,36,1.7,6,0,""],
-["s3","Sauces","Chocolate / Mocha Sauce","jug · half gallon",17,3,33,1.9,6,0,""],
-["s4","Sauces","White Chocolate Sauce","jug · half gallon",19,2,26,1.2,6,0,""],
-["s5","Sauces","Hazelnut Sauce","bottle · 64 oz pump bottle",14,2,22,.9,6,0,""],
-["s6","Sauces","Pumpkin Spice Sauce","jug · half gallon",19,3,0,1.1,12,0,"Out for now. Vendor is sold out and has no date yet"],
-["s7","Sauces","Brown Sugar Cinnamon Sauce","case · 4 × half gallon",62,1,7,.8,8,0,""],
-["s8","Sauces","Peppermint Sauce (seasonal)","bottle · 64 oz pump bottle",15,2,4,.7,10,3,"Seasonal truck lands in 3 days"],
-["s9","Sauces","Sugar-Free Vanilla Sauce","bottle · 64 oz pump bottle",15,1,12,.4,6,0,""],
-["s10","Sauces","Caramel Drizzle","case · 6 × 64 oz squeeze bottles",54,1,13,.6,6,0,""],
-["m1","Milk & Dairy","Whole Milk","case · 4 × gallon",14,10,120,16,2,0,""],
-["m2","Milk & Dairy","2% Milk","case · 4 × gallon",14,6,64,8,2,0,""],
-["m3","Milk & Dairy","Oat Milk (barista)","case · 12 × 32 oz",42,4,14,6.5,4,2,"Delivery arriving in 2 days"],
-["m4","Milk & Dairy","Almond Milk","case · 12 × 32 oz",38,2,26,2.4,4,0,""],
-["m5","Milk & Dairy","Half & Half","case · 12 × quart",34,3,40,3.2,2,0,""],
-["m6","Milk & Dairy","Heavy Whipping Cream","case · 12 × quart",46,2,22,1.8,2,0,""],
-["m7","Milk & Dairy","Whipped Cream Canisters","case · 12 canisters",39,1,17,1.1,3,0,""],
-["c1","Cups, Lids & Sleeves","12 oz Hot Cups","case · 1,000",68,3,26,5.2,5,0,""],
-["c2","Cups, Lids & Sleeves","16 oz Hot Cups","case · 1,000",76,4,32,6.1,5,0,""],
-["c3","Cups, Lids & Sleeves","16 oz Cold Cups (clear)","case · 1,000",72,4,41,5.8,5,0,""],
-["c4","Cups, Lids & Sleeves","24 oz Cold Cups (clear)","case · 600",64,3,9,4.4,5,3,"Late truck, now due in 3 days"],
-["c5","Cups, Lids & Sleeves","Hot Cup Lids (black)","case · 1,000",44,4,37,5.5,5,0,""],
-["c6","Cups, Lids & Sleeves","Dome Lids (cold)","case · 1,000",42,3,29,4.8,5,0,""],
-["c7","Cups, Lids & Sleeves","Cup Sleeves (kraft)","case · 1,000",31,2,19,2.1,5,0,""],
-["c8","Cups, Lids & Sleeves","Wooden Stir Sticks","case · 5,000",22,1,15,.6,4,0,""],
-["k1","Bakery","Butter Croissant (frozen dough)","case · 48",58,2,24,2.3,3,0,""],
-["k2","Bakery","Cinnamon Roll (ready to bake)","case · 24",46,2,17,1.9,3,0,""],
-["k3","Bakery","Blueberry Muffin Batter","case · 4 × 5 lb tubs",52,1,12,.9,3,0,""],
-["k4","Bakery","Cookie Dough (chocolate chip)","case · 6 × 5 lb tubs",49,1,13,.8,3,0,""],
-["k5","Bakery","Bagels (plain/everything mix)","case · 72",41,1,11,.9,3,0,""],
-["f1","Food & Pantry","Breakfast Sandwich Kit (egg/cheese)","case · 40",64,2,20,1.7,3,0,""],
-["f2","Food & Pantry","Turkey Sausage Patties","case · 4 × 40 ct",68,1,8,.7,3,0,""],
-["f3","Food & Pantry","Raw Sugar Packets","case · 1,000",24,1,23,.6,5,0,""],
-["f4","Food & Pantry","Sugar Substitute Packets","case · 2,000",27,1,17,.3,5,0,""],
-["z1","Cleaning & Paper Goods","Napkins (dispenser)","case · 6,000",29,2,30,2.2,5,0,""],
-["z2","Cleaning & Paper Goods","Paper To-Go Bags","case · 500",34,1,19,1.2,5,0,""],
-["z3","Cleaning & Paper Goods","Sanitizer Concentrate","case · 4 × gallon",38,1,11,.5,6,0,""],
-["z4","Cleaning & Paper Goods","Espresso Machine Cleaner","case · 12 tubs",58,1,7,.3,7,0,""],
-["z5","Cleaning & Paper Goods","Nitrile Gloves (M/L)","case · 10 boxes",44,1,14,.6,6,0,""],
-["z6","Cleaning & Paper Goods","Paper Towels (roll)","case · 12 rolls",36,1,18,1.0,5,0,""]
+["w1", "Syrups", "B22 Almond", "bottle", 9, 2, 30, 1.0, 5, 0, ""],
+["w2", "Syrups", "B22 Blue Raspberry", "bottle", 9, 2, 30, 1.0, 5, 0, ""],
+["w3", "Syrups", "B22 Butter Pecan", "bottle", 9, 2, 30, 1.0, 5, 0, ""],
+["w4", "Syrups", "B22 Coconut", "bottle", 9, 2, 30, 1.0, 5, 0, ""],
+["w5", "Syrups", "B22 English Toffee", "bottle", 9, 2, 30, 1.0, 5, 0, ""],
+["w6", "Syrups", "B22 Green Apple", "bottle", 9, 2, 30, 1.0, 5, 0, ""],
+["w7", "Syrups", "B22 Hazelnut", "bottle", 9, 2, 30, 1.0, 5, 0, ""],
+["w8", "Syrups", "B22 Irish Crème", "bottle", 9, 2, 30, 1.0, 5, 0, ""],
+["w9", "Syrups", "B21 Liquid Sugar (Simple Syrup)", "bottle", 9, 2, 30, 1.0, 5, 0, ""],
+["w10", "Syrups", "B22 Lavender", "bottle", 9, 2, 30, 1.0, 5, 0, ""],
+["w11", "Syrups", "B22 Macadamia Nut", "bottle", 9, 2, 30, 1.0, 5, 0, ""],
+["w12", "Syrups", "B22 Orange, Mandarin", "bottle", 9, 2, 30, 1.0, 5, 0, ""],
+["w13", "Syrups", "B22 Peach", "bottle", 9, 2, 30, 1.0, 5, 0, ""],
+["w14", "Syrups", "B22 Peppermint", "bottle", 9, 2, 30, 1.0, 5, 0, ""],
+["w15", "Syrups", "B22 Raspberry", "bottle", 9, 2, 30, 1.0, 5, 0, ""],
+["w16", "Syrups", "B22 Recipe 22", "bottle", 9, 2, 30, 1.0, 5, 0, ""],
+["w17", "Syrups", "B22 Strawberry", "bottle", 9, 2, 30, 1.0, 5, 0, ""],
+["w18", "Syrups", "B22 SF Coconut (New**)", "bottle", 9, 2, 30, 1.0, 5, 0, ""],
+["w19", "Syrups", "B22 SF Hazelnut", "bottle", 9, 2, 30, 1.0, 5, 0, ""],
+["w20", "Syrups", "B22 SF Raspberry", "bottle", 9, 2, 30, 1.0, 5, 0, ""],
+["w21", "Syrups", "B22 SF Strawberry (New**)", "bottle", 9, 2, 30, 1.0, 5, 0, ""],
+["w22", "Syrups", "B22 SF Vanilla", "bottle", 9, 2, 30, 1.0, 5, 0, ""],
+["w23", "Syrups", "B22 Toasted Marshmallow", "bottle", 9, 2, 30, 1.0, 5, 0, ""],
+["w24", "Syrups", "B22 Watermelon", "bottle", 9, 2, 30, 1.0, 5, 0, ""],
+["w25", "Syrups", "DiVinci Black Cherry (Divinci)", "bottle", 9, 2, 30, 1.0, 5, 0, ""],
+["w26", "Syrups", "Monin Caramel Apple Butter", "bottle", 9, 2, 30, 1.0, 5, 0, ""],
+["w27", "Syrups", "1883 Blackberry", "bottle", 9, 2, 30, 1.0, 5, 0, ""],
+["w28", "Syrups", "1883 Banana, Crème de", "bottle", 9, 2, 30, 1.0, 5, 0, ""],
+["w29", "Syrups", "Torani Cherry Lime", "bottle", 9, 2, 30, 1.0, 5, 0, ""],
+["w30", "Syrups", "1883 Maple", "bottle", 9, 2, 30, 1.0, 5, 0, ""],
+["w31", "Syrups", "1883 Butterscotch", "bottle", 9, 2, 30, 1.0, 5, 0, ""],
+["w32", "Syrups", "1883 Cayenne Pepper (spicy)", "bottle", 9, 2, 30, 1.0, 5, 0, ""],
+["w33", "Syrups", "Torani Brown Sugar Cinnamon", "bottle", 9, 2, 30, 1.0, 5, 0, ""],
+["w34", "Syrups", "B22 Vanilla (6/case)", "case (6)", 9, 2, 30, 1.0, 5, 0, ""],
+["w35", "Sauces", "B22 Caramel (6/case)", "case (6)", 45, 2, 30, 1.0, 5, 0, ""],
+["w36", "Sauces", "B22 Chocolate (6/case)", "case (6)", 45, 2, 30, 1.0, 5, 0, ""],
+["w37", "Sauces", "B22 White Chocolate (6/case)", "case (6)", 45, 2, 30, 1.0, 5, 0, ""],
+["w38", "Sauces", "DiVinci SF Caramel (ea.)", "bottle", 45, 2, 30, 1.0, 5, 0, ""],
+["w39", "Sauces", "Monin SF Chocolate (ea.)", "bottle", 45, 2, 30, 1.0, 5, 0, ""],
+["w40", "Sauces", "Torani SF White Chocolate (ea.)", "bottle", 45, 2, 30, 1.0, 5, 0, ""],
+["w41", "Sauces", "DiVinci Pumpkin Pie (ea.)", "bottle", 45, 2, 0, 0.6, 12, 0, "Out for now. Vendor is sold out and has no date yet"],
+["w42", "Powders", "MoCafé Green Tea", "case (4)", 40, 2, 30, 1.0, 5, 0, ""],
+["w43", "Powders", "Big Train Latte", "case (5)", 40, 2, 30, 1.0, 5, 0, ""],
+["w44", "Powders", "Big Train Vanilla", "case (5)", 40, 2, 30, 1.0, 5, 0, ""],
+["w45", "Smoothie Mix", "B22 Raspberry", "bottle", 14, 2, 30, 1.0, 5, 0, ""],
+["w46", "Smoothie Mix", "B22 Mango", "bottle", 14, 2, 30, 1.0, 5, 0, ""],
+["w47", "Smoothie Mix", "B22 Peach", "bottle", 14, 2, 30, 1.0, 5, 0, ""],
+["w48", "Smoothie Mix", "B22 Pina Colada", "bottle", 14, 2, 30, 1.0, 5, 0, ""],
+["w49", "Smoothie Mix", "B22 Strawberry", "bottle", 14, 2, 30, 1.0, 5, 0, ""],
+["w50", "Smoothie Mix", "B22 Strawberry Banana", "bottle", 14, 2, 30, 1.0, 5, 0, ""],
+["w51", "Smoothie Mix", "B22 Lemonade", "bottle", 14, 2, 30, 1.0, 5, 0, ""],
+["w52", "Paper Cups & Lids", "Karat 12 oz", "case", 30, 2, 30, 1.0, 5, 0, ""],
+["w53", "Paper Cups & Lids", "Karat 16 oz", "case", 30, 2, 30, 1.0, 5, 0, ""],
+["w54", "Paper Cups & Lids", "Karat 20 oz", "case", 30, 2, 30, 1.0, 5, 0, ""],
+["w55", "Paper Cups & Lids", "Karat Black lids", "case", 30, 2, 30, 1.0, 5, 0, ""],
+["w56", "Paper Cups & Lids", "Karat Sleeves", "case", 30, 2, 30, 1.0, 5, 0, ""],
+["w57", "Paper Cups & Lids", "Choice 8 oz Cups (J2G)", "sleeve (50)", 30, 2, 30, 1.0, 5, 0, ""],
+["w58", "Paper Cups & Lids", "Choice 8 oz lids (J2G)", "sleeve (100)", 30, 2, 30, 1.0, 5, 0, ""],
+["w59", "Paper Cups & Lids", "Choice 4 oz", "sleeve (50)", 30, 2, 30, 1.0, 5, 0, ""],
+["w60", "Paper Cups & Lids", "Choice 4 oz Lids", "sleeve (100)", 30, 2, 30, 1.0, 5, 0, ""],
+["w61", "Plastic Cups & Lids", "Karat 16 oz", "case", 30, 2, 30, 1.0, 5, 0, ""],
+["w62", "Plastic Cups & Lids", "Karat 24 oz", "case", 30, 2, 9, 2.4, 5, 3, "Late truck, now due in 3 days"],
+["w63", "Plastic Cups & Lids", "Karat Dome Lids", "case", 30, 2, 30, 1.0, 5, 0, ""],
+["w64", "Plastic Cups & Lids", "Karat Nitro Lids", "case", 30, 2, 30, 1.0, 5, 0, ""],
+["w65", "Plastic Cups & Lids", "Karat Flat Lids", "case", 30, 2, 30, 1.0, 5, 0, ""],
+["w66", "Plastic Cups & Lids", "Karat 32 oz", "case", 30, 2, 30, 1.0, 5, 0, ""],
+["w67", "Plastic Cups & Lids", "Karat Dome Lids (for 32 oz)", "case", 30, 2, 30, 1.0, 5, 0, ""],
+["w68", "Plastic Cups & Lids", "Karat Flat Lids (for 32 oz)", "case", 30, 2, 30, 1.0, 5, 0, ""],
+["w69", "Alt-Milks", "Pacific Soy", "case (12)", 30, 2, 30, 1.0, 5, 0, ""],
+["w70", "Alt-Milks", "Pacific Almond", "case (12)", 30, 2, 30, 1.0, 5, 0, ""],
+["w71", "Alt-Milks", "Pacific Coconut", "case (12)", 30, 2, 30, 1.0, 5, 0, ""],
+["w72", "Alt-Milks", "Oatley Oat", "case (12)", 30, 2, 30, 1.0, 5, 0, ""],
+["w73", "Tea Concentrates", "Maya Chai", "Bottle", 30, 2, 4, 1.1, 5, 0, ""],
+["w74", "Tea Concentrates", "Maya Devi", "Bottle", 30, 2, 30, 1.0, 5, 0, ""],
+["w75", "Energy", "Lotus", "Bottle", 30, 2, 30, 1.0, 5, 0, ""],
+["w76", "Energy", "Lotus 0 (zero) sugar", "Bottle", 30, 2, 30, 1.0, 5, 0, ""],
+["w77", "Sweeteners", "Regal Sugar in the Raw", "case", 30, 2, 30, 1.0, 5, 0, ""],
+["w78", "Sweeteners", "Regal Equal", "case", 30, 2, 30, 1.0, 5, 0, ""],
+["w79", "Sweeteners", "Regal Stevia", "case", 30, 2, 30, 1.0, 5, 0, ""],
+["w80", "Sweeteners", "Regal Splenda", "case", 30, 2, 30, 1.0, 5, 0, ""],
+["w81", "Sweeteners", "Regal Sweet-n-low", "case", 30, 2, 30, 1.0, 5, 0, ""],
+["w82", "Sweeteners", "Regal Sugar", "case", 30, 2, 30, 1.0, 5, 0, ""],
+["w83", "Boylan", "Boylan Cola", "case", 30, 2, 30, 1.0, 5, 0, ""],
+["w84", "Boylan", "Boylan Diet Cola", "case", 30, 2, 30, 1.0, 5, 0, ""],
+["w85", "Boylan", "Boylan Cream Soda", "case", 30, 2, 30, 1.0, 5, 0, ""],
+["w86", "Boylan", "Boylan Ginger Ale", "case", 30, 2, 30, 1.0, 5, 0, ""],
+["w87", "Boylan", "Boylan Orange Soda", "case", 30, 2, 30, 1.0, 5, 0, ""],
+["w88", "Boylan", "Boylan Grape Soda", "case", 30, 2, 30, 1.0, 5, 0, ""],
+["w89", "Misc.", "Marathon Tri-Fold Paper Towels", "Case", 30, 2, 30, 1.0, 5, 0, ""],
+["w90", "Misc.", "Karat Straws", "case", 30, 2, 30, 1.0, 5, 0, ""],
+["w91", "Misc.", "EcoChoice Clamshells", "Case", 30, 2, 30, 1.0, 5, 0, ""],
+["w92", "Misc.", "Choice Drink Carriers", "sleeve (75)", 30, 2, 30, 1.0, 5, 0, ""],
+["w93", "Misc.", "Half Gallon Jugs", "each", 30, 2, 30, 1.0, 5, 0, ""],
+["w94", "Misc.", "BT-6 Bakery Tissue", "box", 30, 2, 30, 1.0, 5, 0, ""],
+["w95", "Misc.", "Choice Stir Straws 8\"", "box", 30, 2, 30, 1.0, 5, 0, ""],
+["w96", "Misc.", "Choice Small Pastry Bags", "case", 30, 2, 30, 1.0, 5, 0, ""],
+["w97", "Misc.", "Choice 128 Oz. Joe To Go", "each", 30, 2, 30, 1.0, 5, 0, ""],
+["w98", "Misc.", "Bunn Coffee Filters (for Fetco)", "box", 30, 2, 30, 1.0, 5, 0, ""],
+["w99", "Misc.", "Shopping bags with handles", "stack", 30, 2, 30, 1.0, 5, 0, ""],
+["w100", "Pumps", "B22 Syrup Pump & Torani & Divinci", "case", 30, 2, 30, 1.0, 5, 0, ""],
+["w101", "Pumps", "B22 Vanilla Syrup Pump / Lotus Pump", "each", 30, 2, 30, 1.0, 5, 0, ""],
+["w102", "Pumps", "B22 Sauce Pump", "each", 30, 2, 30, 1.0, 5, 0, ""],
+["w103", "Pumps", "Maya Pump (1 oz)", "each", 30, 2, 30, 1.0, 5, 0, ""],
+["w104", "Pumps", "Other Pump Specify ________________", "each", 30, 2, 30, 1.0, 5, 0, ""],
+["w105", "Cleaners", "Cafiza", "each", 30, 2, 30, 1.0, 5, 0, ""],
+["w106", "Cleaners", "Biocaf Rinza (biocaf)", "bottle", 30, 2, 30, 1.0, 5, 0, ""],
+["w107", "Cleaners", "Ice Machine Cleaner", "bottle", 30, 2, 30, 1.0, 5, 0, ""],
+["w108", "Tea & Retail: Teasource", "English Breakfast Decaf (BT no caff)", "1lb", 30, 2, 30, 1.0, 5, 0, ""],
+["w109", "Tea & Retail: Teasource", "Moon Over Madagascar BT", "1lb", 30, 2, 30, 1.0, 5, 0, ""],
+["w110", "Tea & Retail: Teasource", "Dark Rose Tea BT", "1lb", 30, 2, 30, 1.0, 5, 0, ""],
+["w111", "Tea & Retail: Teasource", "Green Mango GT", "1lb", 30, 2, 30, 1.0, 5, 0, ""],
+["w112", "Tea & Retail: Teasource", "Northern Lights Herbal no caff", "1lb", 30, 2, 30, 1.0, 5, 0, ""],
+["w113", "Tea & Retail: Teasource", "Organic Rooibos (RB)", "1lb", 30, 2, 30, 1.0, 5, 0, ""],
+["w114", "Tea & Retail: Teasource", "Peach Paradise", "1lb", 30, 2, 30, 1.0, 5, 0, ""],
+["w115", "Tea & Retail: Teasource", "Red Berries Herbal", "1lb", 30, 2, 30, 1.0, 5, 0, ""],
+["w116", "Tea & Retail: East Indies", "Black Tea (Iced Tea)", "case", 30, 2, 30, 1.0, 5, 0, ""],
+["w117", "Tea & Retail: East Indies", "Black Currant BT", "2lb", 30, 2, 30, 1.0, 5, 0, ""],
+["w118", "Tea & Retail: East Indies", "Blueberry Bliss BT/GT", "2lb", 30, 2, 30, 1.0, 5, 0, ""],
+["w119", "Tea & Retail: East Indies", "Lavender BT", "2lb", 30, 2, 30, 1.0, 5, 0, ""],
+["w120", "Tea & Retail: East Indies", "Almond Cookies GT", "2lb", 30, 2, 30, 1.0, 5, 0, ""],
+["w121", "Tea & Retail: East Indies", "Carrot Cake RB", "2lb", 30, 2, 30, 1.0, 5, 0, ""],
+["w122", "Tea & Retail: East Indies", "Creativity RB", "2lb", 30, 2, 30, 1.0, 5, 0, ""],
+["w123", "Tea & Retail: Maya", "Assam Black Tea (BT)", "", 30, 2, 30, 1.0, 5, 0, ""],
+["w124", "Tea & Retail: Maya", "Jasmine Special (GT)", "1lb", 30, 2, 30, 1.0, 5, 0, ""],
+["w125", "Tea & Retail: Maya", "Lady Earl Grey (Manhattan Earl Grey) (BT)", "1lb", 30, 2, 30, 1.0, 5, 0, ""],
+["w126", "Tea & Retail: Maya", "Peach Mango Bliss (BT)", "1lb", 30, 2, 30, 1.0, 5, 0, ""],
+["w127", "Tea & Retail: Maya", "Peppermint Herbal (Herbal no caf.)", "1lb", 30, 2, 30, 1.0, 5, 0, ""],
+["w128", "Tea & Retail: Maya", "Relaxing Mint (Herbal no caf.)", "1lb", 30, 2, 30, 1.0, 5, 0, ""],
+["w129", "Tea & Retail: Maya", "Herbal Chai", "1lb", 30, 2, 30, 1.0, 5, 0, ""],
+["w130", "Tea & Retail: Maya", "Sencha Green (GT)", "1lb", 30, 2, 30, 1.0, 5, 0, ""],
+["w131", "Tea & Retail: Maya", "Strawberry Coconut (GT) (Straw/Rhub East Indies)", "1lb", 30, 2, 30, 1.0, 5, 0, ""],
+["w132", "Tea & Retail: Tea", "T-sac Filters Small", "box", 30, 2, 30, 1.0, 5, 0, ""],
+["w133", "Tea & Retail: Tea", "T-sac Filters Large", "box", 30, 2, 30, 1.0, 5, 0, ""],
+["w134", "Tea & Retail: Tea", "Retail Kraft Bags", "20 bags", 30, 2, 30, 1.0, 5, 0, ""],
+["w135", "SAMS", "Honey (1 Individual)", "each", 30, 2, 30, 1.0, 5, 0, ""],
+["w136", "SAMS: Paper & Plastic", "Dixie Plates -6 7/8\"", "bag", 30, 2, 30, 1.0, 5, 0, ""],
+["w137", "SAMS: Paper & Plastic", "9oz Dixie Cups", "bag", 30, 2, 30, 1.0, 5, 0, ""],
+["w138", "SAMS: Paper & Plastic", "Plastic Forks", "box", 30, 2, 30, 1.0, 5, 0, ""],
+["w139", "SAMS: Paper & Plastic", "Plastic Knives", "box", 30, 2, 30, 1.0, 5, 0, ""],
+["w140", "SAMS: Paper & Plastic", "Plastic Spoons", "box", 30, 2, 30, 1.0, 5, 0, ""],
+["w141", "SAMS: Paper & Plastic", "Plastic Wrap", "roll", 30, 2, 30, 1.0, 5, 0, ""],
+["w142", "SAMS: Other", "Toilet Paper", "bag", 30, 2, 30, 1.0, 5, 0, ""],
+["w143", "SAMS: Other", "Medium Trash Bags (Purple)33 gal", "box", 30, 2, 30, 1.0, 5, 0, ""],
+["w144", "SAMS: Other", "Green Trash Box(Clear ) 50 gal", "box", 30, 2, 30, 1.0, 5, 0, ""],
+["w145", "SAMS: Other", "Green Trash Box (Black) (Bakery Only)", "box", 30, 2, 30, 1.0, 5, 0, ""],
+["w146", "SAMS: Other", "Tall Kitchen Flex Bags 13 gal", "box", 30, 2, 30, 1.0, 5, 0, ""],
+["w147", "SAMS: Other", "Laundry Soap", "lg. bottle", 30, 2, 30, 1.0, 5, 0, ""],
+["w148", "SAMS: Cleaning", "Toilet Bowl Cleaner (4 pack)", "box of 4", 30, 2, 30, 1.0, 5, 0, ""],
+["w149", "SAMS: Cleaning", "World's Best Glass Cleaner (4 pack)", "each", 30, 2, 30, 1.0, 5, 0, ""],
+["w150", "SAMS: Cleaning", "Sponges", "pack", 30, 2, 30, 1.0, 5, 0, ""],
+["w151", "SAMS: Cleaning", "Clorox Bleach (3 Pack)", "each", 30, 2, 30, 1.0, 5, 0, ""],
+["w152", "SAMS: Cleaning", "Water Softener Salt", "bag", 30, 2, 30, 1.0, 5, 0, ""],
+["w153", "SAMS: Cleaning", "Dawn Dish Soap", "bottle", 30, 2, 30, 1.0, 5, 0, ""],
+["w154", "SAMS: Cleaning", "Microfiber Towels (pack of 36)", "pack of 36", 30, 2, 30, 1.0, 5, 0, ""],
+["w155", "Kroger/GFS", "Oats", "container", 30, 2, 30, 1.0, 5, 0, ""],
+["w156", "Kroger/GFS", "Apple Juice", "bottle", 30, 2, 30, 1.0, 5, 0, ""],
+["w157", "Kroger/GFS", "Club Soda", "case", 30, 2, 30, 1.0, 5, 0, ""],
+["w158", "Kroger/GFS", "Dog Treats", "box", 30, 2, 30, 1.0, 5, 0, ""],
+["w159", "Kroger/GFS", "Ritz crackers", "box", 30, 2, 30, 1.0, 5, 0, ""],
+["w160", "Kroger/GFS", "Rice (2lb)", "bag", 30, 2, 30, 1.0, 5, 0, ""],
+["w161", "Kroger/GFS", "Clever Filters (Coffee Filters #4)", "box", 30, 2, 30, 1.0, 5, 0, ""],
+["w162", "GFS", "Cinnamon", "6oz bottle", 30, 2, 30, 1.0, 5, 0, ""],
+["w163", "GFS", "Half and Half individuals (Bag of 17)", "bag of 17", 30, 2, 30, 1.0, 5, 0, ""],
+["w164", "GFS", "Big Square Napkins", "bundle", 30, 2, 30, 1.0, 5, 0, ""],
+["w165", "GFS", "8# Pastry Bags", "bundle", 30, 2, 30, 1.0, 5, 0, ""],
+["w166", "GFS", "Plastic Gloves", "box", 30, 2, 30, 1.0, 5, 0, ""],
+["w167", "GFS", "Dishwasher Powder", "box", 30, 2, 30, 1.0, 5, 0, ""],
+["w168", "Retail", "Adagio IngenuiTEA", "ea.", 30, 2, 30, 1.0, 5, 0, ""],
+["w169", "Retail", "Clever", "ea.", 30, 2, 30, 1.0, 5, 0, ""],
+["w170", "Retail Teas", "Gold Rush White Tea", "ea", 30, 2, 30, 1.0, 5, 0, ""],
+["w171", "Retail Teas", "Chinese Sencha Green Tea", "ea", 30, 2, 30, 1.0, 5, 0, ""],
+["w172", "Retail Teas", "Relaxing Mint Herbal Tea", "ea", 30, 2, 30, 1.0, 5, 0, ""],
+["w173", "Diner Mugs", "Diner Mug (Natural)", "", 30, 2, 30, 1.0, 5, 0, ""],
+["w174", "Diner Mugs", "Diner Mug (Blue)", "", 30, 2, 30, 1.0, 5, 0, ""],
+["w175", "Diner Mugs", "Diner Mug (Pink)", "", 30, 2, 30, 1.0, 5, 0, ""],
+["w176", "Diner Mugs", "Diner Mug (Mint)", "", 30, 2, 30, 1.0, 5, 0, ""],
+["w177", "Diner Mugs", "Diner Mug (Grey)", "", 30, 2, 30, 1.0, 5, 0, ""],
+["w178", "Cold Cup w/straw", "Cold Cup w/ straw (Teal)", "", 30, 2, 30, 1.0, 5, 0, ""],
+["w179", "Cold Cup w/straw", "Cold Cup w/ straw (Yellow)", "", 30, 2, 30, 1.0, 5, 0, ""],
+["w180", "Cold Cup w/straw", "Cold Cup w/ straw (White)", "", 30, 2, 30, 1.0, 5, 0, ""],
+["w181", "Cold Cup w/straw", "Cold Cup w/ straw (Navy)", "", 30, 2, 30, 1.0, 5, 0, ""],
+["w182", "Cold Cup w/straw", "Cold Cup w/ straw (Pink)", "", 30, 2, 30, 1.0, 5, 0, ""],
+["w183", "Cold Cup w/straw", "Cold Cup w/ straw (Black)", "", 30, 2, 30, 1.0, 5, 0, ""],
+["w184", "Cold Cup w/straw", "Cold Cup w/ straw (Mint)", "", 30, 2, 30, 1.0, 5, 0, ""],
+["w185", "Cold Cup w/straw", "Cold Cup w/ straw (Grey)", "", 30, 2, 30, 1.0, 5, 0, ""],
+["w186", "Vafels", "Maple (12/box)", "Box", 30, 2, 30, 1.0, 5, 0, ""],
+["w187", "Vafels", "Speculous (cookie batter)", "Box", 30, 2, 30, 1.0, 5, 0, ""],
+["w188", "Vafels", "Coffee", "Box", 30, 2, 30, 1.0, 5, 0, ""],
+["w189", "Office Supplies", "Stamp Cards", "box", 30, 2, 30, 1.0, 5, 0, ""],
+["w190", "Office Supplies", "Stamper Ink", "ea", 30, 2, 30, 1.0, 5, 0, ""],
+["w191", "Office Supplies", "Post-It", "ea", 30, 2, 30, 1.0, 5, 0, ""],
+["w192", "Office Supplies", "Sharpies Black", "bundle/10", 30, 2, 30, 1.0, 5, 0, ""],
+["w193", "Office Supplies", "Sharpies Red", "bundle/10", 30, 2, 30, 1.0, 5, 0, ""],
+["w194", "Office Supplies", "Stickers", "bundle/10", 30, 2, 30, 1.0, 5, 0, ""],
+["w195", "Office Supplies", "Printer Paper", "ream", 30, 2, 30, 1.0, 5, 0, ""],
+["w196", "Office Supplies", "Masking Tape", "ea", 30, 2, 30, 1.0, 5, 0, ""],
+["w197", "Office Supplies", "Closing Deposit Slips", "ea", 30, 2, 30, 1.0, 5, 0, ""],
+["w198", "Office Supplies", "POS Receipt printer Paper 3\"", "ea", 30, 2, 30, 1.0, 5, 0, ""],
+["w199", "Office Supplies", "Terminal Paper 2 3/16\"", "ea", 30, 2, 30, 1.0, 5, 0, ""],
+["w200", "Office Supplies", "Calculator Paper", "ea", 30, 2, 30, 1.0, 5, 0, ""],
+["w201", "Office Supplies", "Gift Cards", "box", 30, 2, 30, 1.0, 5, 0, ""],
+["w202", "Office Supplies", "Passport Cards", "25 stack", 30, 2, 30, 1.0, 5, 0, ""],
+["w203", "Office Supplies", "Cold Brew Stickers", "10", 30, 2, 30, 1.0, 5, 0, ""],
+["w204", "Office Supplies", "Iced Tea Stickers", "10", 30, 2, 30, 1.0, 5, 0, ""],
+["w205", "For DJ Only (Weekdays Only)", "Lemons", "", 30, 2, 30, 1.0, 5, 0, ""],
+["w206", "For DJ Only (Weekdays Only)", "Limes", "", 30, 2, 30, 1.0, 5, 0, ""],
+["w207", "For DJ Only (Weekdays Only)", "Cherries", "", 30, 2, 30, 1.0, 5, 0, ""],
+["w208", "For DJ Only (Weekdays Only)", "Ginger Beer", "", 30, 2, 30, 1.0, 5, 0, ""],
+["w209", "For DJ Only (Weekdays Only)", "Oranges", "", 30, 2, 30, 1.0, 5, 0, ""]
 ].map(a=>({id:a[0],cat:a[1],name:a[2],unit:a[3],price:a[4],par:a[5],wh:a[6],use:a[7],lead:a[8],eta:a[9],why:a[10]}));
 const PB=Object.fromEntries(P.map(p=>[p.id,p]));
 const STATUS=["Submitted","Picked","Shipped","Delivered"];
@@ -174,7 +336,7 @@ const nice=s=>new Date(s+"T12:00:00").toLocaleDateString(undefined,{month:"short
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const sget=(k,d)=>{try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}};
 const sset=(k,v)=>localStorage.setItem(k,JSON.stringify(v));
-const SV="cc6_";
+const SV="cc7_";
 if("serviceWorker" in navigator)window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));
 // ===== CONFIG: set these for real use =====
 const WAREHOUSE_EMAIL="warehouse@coffeecrossing.com"; // where orders and reorder alerts are emailed
@@ -296,7 +458,7 @@ function render(){
 // ---------- store picker ----------
 function vPicker(){
   hero(`Who's <span class="oval">ordering</span> today?`,"Pick your store to start this week's warehouse order. No more copying the sheet.",true);
-  $("#view").innerHTML=`<div class="stores">${STORES.map(s=>{const L=lastOrder(s.n);return `<button class="store" data-s="${s.n}"><span class="pill tag t-y">${s.t}</span><div class="ic">${s.n[0]}</div><h4>${s.n}</h4><div class="m">${s.mgr}</div><div class="m" style="margin-top:6px">${L?`Last order ${nice(L.date)} · ${usd(tot(L.lines))}`:"No orders yet"}</div><div class="go">Start new order →</div></button>`}).join("")}</div>
+  $("#view").innerHTML=`<div class="stores">${STORES.map(s=>{const L=lastOrder(s.n);return `<button class="store" data-s="${s.n}"><span class="pill tag t-y">${s.t}</span><div class="ic">${s.n[0]}</div><h4>${s.n}</h4><div class="m">${s.mgr}</div><div class="m" style="margin-top:6px">${L?`Last order ${nice(L.date)}`:"No orders yet"}</div><div class="go">Start new order →</div></button>`}).join("")}</div>
   <p class="note" style="text-align:center;margin-top:18px">Warehouse team? <a href="#" id="wl" style="color:var(--k);font-weight:600">Go to the Warehouse view</a></p>`;
   document.querySelectorAll(".store").forEach(b=>b.onclick=()=>{ST=b.dataset.s;sset(SV+"store",ST);CART={};sset(SV+"cart",CART);VIEW="order";render();window.scrollTo(0,0)});
   $("#wl").onclick=e=>{e.preventDefault();go("warehouse")};
@@ -330,10 +492,9 @@ function vOrder(){
 function rowHTML(p,s){
   const q=CART[p.id]||0,oh=onhand(s,p),par=parOf(s,p),low=oh<par*.5,sug=Math.max(0,par-oh),ss=stockState(p);
   const stag=ss.k==="out"?`<span class="tag t-bad">Out at warehouse</span>`:ss.k==="low"?`<span class="tag t-warn">Low at warehouse</span>`:"";
-  return `<div class="row ${low?"low":""} ${q?"has":""}" data-id="${p.id}"><div><div class="n">${p.name} ${stag}</div><div class="u">${p.unit} · ${usd(p.price)}</div>
+  return `<div class="row ${low?"low":""} ${q?"has":""}" data-id="${p.id}"><div><div class="n">${p.name} ${stag}</div><div class="u">${esc(p.unit)}</div>
    <div class="hint"><span class="stk" style="color:${low?"var(--warn)":"var(--g)"}">${low?"⚠ Running low · ":""}You have ~${oh} · par ${par}</span>${sug&&low?`<a href="#" class="sg" data-q="${sug}" style="color:var(--k);font-weight:600">Add ${sug}</a>`:""}</div>
    ${ss.why?`<div class="hint" style="color:${ss.k==="out"?"var(--bad)":"var(--warn)"}">${ss.why}</div>`:""}</div>
-   <div class="price">${q?usd(q*p.price):"–"}<small>est. line</small></div>
    ${p.cat==="Sauces"?`<div class="step"><select class="qsel" aria-label="quantity for ${p.name}">${Array.from({length:31},(_,i)=>`<option value="${i}" ${i===q?"selected":""}>${i===0?"Qty…":i+" × "+p.unit.split(" · ")[0]+(i>1?"s":"")}</option>`).join("")}</select></div>`:`<div class="step"><button data-d="-1" aria-label="less">−</button><input type="text" inputmode="numeric" value="${q}" aria-label="qty"><button data-d="1" aria-label="more">+</button></div>`}</div>`;
 }
 function list(){
@@ -351,14 +512,14 @@ function list(){
     const sg=r.querySelector(".sg");if(sg)sg.onclick=e=>{e.preventDefault();CART[id]=+sg.dataset.q;persist();refreshRow(r,id)}});
   summary();
 }
-function refreshRow(r,id){const q=CART[id]||0;if(r.querySelector("input"))r.querySelector("input").value=q;if(r.querySelector(".qsel"))r.querySelector(".qsel").value=q;r.classList.toggle("has",q>0);r.querySelector(".price").innerHTML=(q?usd(q*PB[id].price):"–")+"<small>est. line</small>";summary()}
+function refreshRow(r,id){const q=CART[id]||0;if(r.querySelector("input"))r.querySelector("input").value=q;if(r.querySelector(".qsel"))r.querySelector(".qsel").value=q;r.classList.toggle("has",q>0);summary()}
 function persist(){Object.keys(CART).forEach(k=>{if(!CART[k])delete CART[k]});sset(SV+"cart",CART)}
 function summary(){
   const T=cartTotals(),lines=Object.keys(CART).filter(k=>CART[k]>0);
   const warn=lines.filter(id=>stockState(PB[id]).k==="out").length;
   const nd=nextDelivery();
-  $("#sum").innerHTML=`<h3>Your order</h3><div class="note" style="margin:-4px 0 6px">Store: <b>${store().n}</b> · ${store().mgr}</div><div class="big">${usd(T.t)}</div><div class="note">${T.n} cases · ${T.c} items · estimated total</div>
-   <div class="sumbox">${lines.length?lines.map(id=>`<div class="sumline"><span>${CART[id]} × ${PB[id].name}</span><b>${usd(CART[id]*PB[id].price)}</b></div>`).join(""):`<p class="note">Nothing yet. Add items or tap "Repeat last order".</p>`}</div>
+  $("#sum").innerHTML=`<h3>Your order</h3><div class="note" style="margin:-4px 0 6px">Store: <b>${store().n}</b> · ${store().mgr}</div><div class="big">${T.c} item${T.c===1?"":"s"}</div><div class="note">${T.n} units total</div>
+   <div class="sumbox">${lines.length?lines.map(id=>`<div class="sumline"><span>${CART[id]} × ${PB[id].name}</span></div>`).join(""):`<p class="note">Nothing yet. Add items or tap "Repeat last order".</p>`}</div>
    ${warn?`<div class="alert bad" style="font-size:12.5px"><b>${warn} item${warn>1?"s":""} out at the warehouse.</b> They'll ship as soon as they're back in.</div>`:""}
    <label class="note"><b>Requested delivery date</b></label><input type="date" id="dd" value="${sget(SV+"dd",nd)}" min="${addd(1)}" style="width:100%;margin:4px 0 10px">
    <label class="note"><b>Notes for the warehouse</b></label><textarea id="nt" placeholder="Anything special? Substitutions OK, dock closed Friday…">${esc(sget(SV+"nt",""))}</textarea>
@@ -370,6 +531,19 @@ function summary(){
 function nextDelivery(){let d=1;for(;d<8;d++){const w=new Date(today().getTime()+d*DAY).getDay();if(w===2||w===4)break}return addd(d)}
 let LASTSUB=null;
 function submit(){
+  const zero=P.filter(p=>!(CART[p.id]>0));
+  if(!zero.length)return doSubmit();
+  const by={};zero.forEach(p=>(by[p.cat]=by[p.cat]||[]).push(p));
+  const m=document.createElement("div");m.className="modal";
+  m.innerHTML=`<div class="box"><h3 style="margin:0 0 6px">Quantity is 0 or blank on ${zero.length} item${zero.length>1?"s":""}</h3>
+   <p class="note" style="margin:0 0 10px">Please confirm you really don't need any of these this time. Or go back and fix the order.</p>
+   <div id="zlist" style="max-height:46vh;overflow:auto;border:1px solid var(--ln);border-radius:14px;padding:10px 14px;font-size:13.5px">${CATS.filter(c=>by[c]).map(c=>`<div style="margin:6px 0 2px"><b>${esc(c)}</b></div>${by[c].map(p=>`<div class="note" style="padding-left:10px">${esc(p.name)}${p.unit?" · "+esc(p.unit):""}</div>`).join("")}`).join("")}</div>
+   <div style="display:flex;gap:8px;margin-top:16px;flex-wrap:wrap"><button class="btn out" id="z_back">Go back and fix</button><button class="btn alt" id="z_ok">Confirm, I don't need these. Submit order</button></div></div>`;
+  document.body.appendChild(m);
+  m.querySelector("#z_back").onclick=()=>m.remove();
+  m.querySelector("#z_ok").onclick=()=>{m.remove();doSubmit()};
+}
+function doSubmit(){
   const s=store(),lines=Object.keys(CART).filter(k=>CART[k]>0).map(pid=>({pid,q:CART[pid]}));if(!lines.length)return;
   const d=iso(today());DB.seq++;const mine=DB.orders.filter(o=>o.store===s.n&&o.date===d).length+1;
   const o={no:ordNo(s,d,mine),store:s.n,mgr:s.mgr,date:d,deliver:$("#dd").value||nextDelivery(),status:"Submitted",notes:$("#nt").value,lines,log:[["Submitted",d]],ded:0,emailed:new Date().toLocaleTimeString([],{hour:"numeric",minute:"2-digit"})};
@@ -385,7 +559,7 @@ function sendOrder(o){
   save();
 }
 function mailHref(o){return `mailto:${DB.email}?subject=${encodeURIComponent("Order "+o.no+" from "+o.store+" ("+o.mgr+")")}&body=${emailBody(o)}`}
-function emailBody(o){return `Order ${o.no}%0AStore: ${o.store} (${o.mgr})%0ADeliver by: ${o.deliver}%0A%0A`+o.lines.map(l=>encodeURIComponent(l.q+" x "+PB[l.pid].name+" ("+PB[l.pid].unit+")")).join("%0A")+`%0A%0ANotes: ${encodeURIComponent(o.notes||"none")}%0ATotal est: ${usd(tot(o.lines))}`}
+function emailBody(o){return `Order ${o.no}%0AStore: ${o.store} (${o.mgr})%0ADeliver by: ${o.deliver}%0A%0A`+o.lines.map(l=>encodeURIComponent(l.q+" x "+PB[l.pid].name+" ("+PB[l.pid].unit+")")).join("%0A")+`%0A%0ANotes: ${encodeURIComponent(o.notes||"none")}`}
 function vConfirm(){
   const o=DB.orders.find(x=>x.no===LASTSUB)||DB.orders[0];
   hero(`Order <span class="oval">sent</span>`,"The warehouse has your order and will start picking.",false);
@@ -396,20 +570,20 @@ function vConfirm(){
    <div class="alert" style="text-align:left;background:#fffdf0"><b>📧 Email report to the warehouse</b> <span class="tag t-y">Demo: shown here, not sent</span>
    <div class="note" style="margin-top:6px"><b>To:</b> ${esc(DB.email)}<br><b>Subject:</b> Order ${o.no} from ${esc(o.store)} (${esc(o.mgr)})<br><b>Date:</b> ${nice(o.date)} ${o.emailed||""}<br><b>Store:</b> ${esc(o.store)}<br><b>Items:</b></div>
    <ul style="margin:4px 0 4px 18px;padding:0">${o.lines.map(l=>`<li>${l.q} × ${esc(PB[l.pid].name)} <span class="note">(${esc(PB[l.pid].unit)})</span></li>`).join("")}</ul><div class="note">Notes: ${esc(o.notes||"none")}</div></div>
-   <p>🏪 Store <b>${esc(o.store)}</b> · Manager <b>${esc(o.mgr)}</b><br>🚚 Requested delivery <b>${nice(o.deliver)}</b> · ${o.lines.reduce((a,l)=>a+l.q,0)} cases · ${usd(tot(o.lines))}</p>
+   <p>🏪 Store <b>${esc(o.store)}</b> · Manager <b>${esc(o.mgr)}</b><br>🚚 Requested delivery <b>${nice(o.deliver)}</b> · ${o.lines.reduce((a,l)=>a+l.q,0)} units</p>
    <div style="text-align:left;margin:10px 0">${lineTable(o)}</div>${back.length?`<div class="alert" style="text-align:left"><b>Heads up:</b> ${back.map(l=>PB[l.pid].name).join(", ")} ${back.length>1?"are":"is"} out at the warehouse right now. ${back.some(l=>DB.eta[l.pid])?"Expected back "+back.filter(l=>DB.eta[l.pid]).map(l=>PB[l.pid].name+" "+nice(DB.eta[l.pid])).join(", ")+".":"No date yet."}</div>`:""}
    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:12px"><a class="btn out" style="text-decoration:none" href="${mailHref(o)}">Open email again</a><button class="btn" id="h">View order history</button><button class="btn alt" id="n">Start another order</button></div></div>`;
   $("#h").onclick=()=>go("history");$("#n").onclick=()=>go("order");
 }
 // ---------- order detail / history ----------
-function lineTable(o){return `<table><tr><th>Item</th><th>Case</th><th style="text-align:right">Qty</th><th style="text-align:right">Total</th></tr>${o.lines.map(l=>{const p=PB[l.pid];const ss=stockState(p);return `<tr><td>${p.name}${ss.k==="out"&&o.status!=="Delivered"?` <span class="tag t-bad">out</span>`:""}</td><td class="note">${p.unit}</td><td style="text-align:right">${l.q}</td><td style="text-align:right">${usd(l.q*p.price)}</td></tr>`}).join("")}<tr><td colspan="3"><b>Estimated total</b></td><td style="text-align:right"><b>${usd(tot(o.lines))}</b></td></tr></table>`}
+function lineTable(o,wh){return `<table><tr><th>Item</th><th>Unit</th><th style="text-align:right">Qty</th>${wh?`<th style="text-align:right">Total</th>`:""}</tr>${o.lines.map(l=>{const p=PB[l.pid];if(!p)return "";const ss=stockState(p);return `<tr><td>${p.name}${ss.k==="out"&&o.status!=="Delivered"?` <span class="tag t-bad">out</span>`:""}</td><td class="note">${esc(p.unit)}</td><td style="text-align:right">${l.q}</td>${wh?`<td style="text-align:right">${usd(l.q*p.price)}</td>`:""}</tr>`}).join("")}${wh?`<tr><td colspan="3"><b>Estimated total</b></td><td style="text-align:right"><b>${usd(tot(o.lines))}</b></td></tr>`:""}</table>`}
 function stepBar(o){return `<div class="steps">${STATUS.map(s=>`<div class="${STATUS.indexOf(s)<=STATUS.indexOf(o.status)?"on":""}">${s}</div>`).join("")}</div>`}
 function openOrder(no,wh){
   const o=DB.orders.find(x=>x.no===no);if(!o)return;
   const m=document.createElement("div");m.className="modal";
   const nxt=STATUS[STATUS.indexOf(o.status)+1];
   m.innerHTML=`<div class="box"><div style="display:flex;justify-content:space-between;gap:10px"><div><h3 style="margin:0 0 2px">${o.no}</h3><div class="note">${o.store} · ${o.mgr} · placed ${nice(o.date)} · deliver ${nice(o.deliver)}</div></div><button class="btn sm out" id="x">Close</button></div>
-   ${stepBar(o)}${o.notes?`<div class="alert"><b>Notes:</b> ${esc(o.notes)}</div>`:""}${lineTable(o)}
+   ${stepBar(o)}${o.notes?`<div class="alert"><b>Notes:</b> ${esc(o.notes)}</div>`:""}${lineTable(o,wh)}
    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">${wh&&nxt?`<button class="btn alt" id="adv">Mark as ${nxt}</button>`:""}${wh?STATUS.filter(s=>s!==o.status).map(s=>`<button class="btn sm out" data-s="${s}">Set ${s}</button>`).join(""):`<button class="btn alt" id="re">↻ Reorder these items</button>`}</div></div>`;
   document.body.appendChild(m);const close=()=>{m.remove()};
   m.onclick=e=>{if(e.target===m)close()};m.querySelector("#x").onclick=close;
@@ -424,7 +598,7 @@ function setStatus(o,s){
 function vHistory(){
   const s=store();hero(`${s.n} <span class="oval">order</span> history`,"Every order you've sent the warehouse. Reorder in one tap.",false);
   const L=DB.orders.filter(o=>o.store===s.n).sort((a,b)=>b.date.localeCompare(a.date)||b.no.localeCompare(a.no));
-  $("#view").innerHTML=`<div class="card"><h3>Your orders</h3><table class="h"><tr><th>Order #</th><th>Placed</th><th>Delivery</th><th>Cases</th><th>Est. total</th><th>Status</th><th></th></tr>${L.map(o=>`<tr data-no="${o.no}"><td><b>${o.no}</b></td><td>${nice(o.date)}</td><td>${nice(o.deliver)}</td><td>${o.lines.reduce((a,l)=>a+l.q,0)}</td><td>${usd(tot(o.lines))}</td><td><span class="tag ${SCOL[o.status]}">${o.status}</span></td><td><button class="btn sm alt" data-re="${o.no}">Reorder</button></td></tr>`).join("")||"<tr><td>No orders yet.</td></tr>"}</table></div>`;
+  $("#view").innerHTML=`<div class="card"><h3>Your orders</h3><table class="h"><tr><th>Order #</th><th>Placed</th><th>Delivery</th><th>Units</th><th>Status</th><th></th></tr>${L.map(o=>`<tr data-no="${o.no}"><td><b>${o.no}</b></td><td>${nice(o.date)}</td><td>${nice(o.deliver)}</td><td>${o.lines.reduce((a,l)=>a+l.q,0)}</td><td><span class="tag ${SCOL[o.status]}">${o.status}</span></td><td><button class="btn sm alt" data-re="${o.no}">Reorder</button></td></tr>`).join("")||"<tr><td>No orders yet.</td></tr>"}</table></div>`;
   document.querySelectorAll("table.h tr[data-no]").forEach(r=>r.onclick=e=>{if(e.target.dataset.re){const o=DB.orders.find(x=>x.no===e.target.dataset.re);CART={};o.lines.forEach(l=>CART[l.pid]=l.q);sset(SV+"cart",CART);go("order");toast("Order copied. Review and submit.");return}openOrder(r.dataset.no,false)});
 }
 // ---------- warehouse ----------
