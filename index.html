@@ -166,7 +166,7 @@ const P=[
 ["w50", "Smoothie Mix", "B22 Strawberry Banana", "bottle", 14, 2, 30, 1.0, 5, 0, ""],
 ["w51", "Smoothie Mix", "B22 Lemonade", "bottle", 14, 2, 30, 1.0, 5, 0, ""],
 ["w52", "Paper and Plastic", "Karat 12 oz", "case", 30, 2, 30, 1.0, 5, 0, ""],
-["w53", "Paper and Plastic", "Karat 16 oz", "case", 30, 2, 30, 1.0, 5, 0, ""],
+["w53", "Paper and Plastic", "Karat 16 oz (Hot)", "case", 30, 2, 30, 1.0, 5, 0, ""],
 ["w54", "Paper and Plastic", "Karat 20 oz", "case", 30, 2, 30, 1.0, 5, 0, ""],
 ["w55", "Paper and Plastic", "Karat Black lids", "case", 30, 2, 30, 1.0, 5, 0, ""],
 ["w56", "Paper and Plastic", "Karat Sleeves", "case", 30, 2, 30, 1.0, 5, 0, ""],
@@ -174,7 +174,7 @@ const P=[
 ["w58", "Paper and Plastic", "Choice 8 oz lids (J2G)", "sleeve (100)", 30, 2, 30, 1.0, 5, 0, ""],
 ["w59", "Paper and Plastic", "Choice 4 oz", "sleeve (50)", 30, 2, 30, 1.0, 5, 0, ""],
 ["w60", "Paper and Plastic", "Choice 4 oz Lids", "sleeve (100)", 30, 2, 30, 1.0, 5, 0, ""],
-["w61", "Paper and Plastic", "Karat 16 oz", "case", 30, 2, 30, 1.0, 5, 0, ""],
+["w61", "Paper and Plastic", "Karat 16 oz (Cold)", "case", 30, 2, 30, 1.0, 5, 0, ""],
 ["w62", "Paper and Plastic", "Karat 24 oz", "case", 30, 2, 9, 2.4, 5, 3, "Late truck, now due in 3 days"],
 ["w63", "Paper and Plastic", "Karat Dome Lids", "case", 30, 2, 30, 1.0, 5, 0, ""],
 ["w64", "Paper and Plastic", "Karat Nitro Lids", "case", 30, 2, 30, 1.0, 5, 0, ""],
@@ -397,7 +397,14 @@ function vLogin(){
   <p class="note" style="margin-top:16px"><b>Demo logins</b> (one tap fills them in). The live version will use email or phone codes.</p>${USERS.map((u,i)=>`<button class="btn sm out" data-u="${i}" style="margin:3px 4px 3px 0">${u.name} view</button>`).join("")}</div>`;
   document.querySelectorAll("[data-u]").forEach(b=>b.onclick=()=>{const u=USERS[+b.dataset.u];$("#le").value=u.e;$("#lp").value=u.pw});
   $("#lf").onsubmit=e=>{e.preventDefault();const u=USERS.find(x=>x.e===$("#le").value.trim().toLowerCase()&&x.pw===$("#lp").value);if(!u){$("#lerr").textContent="Email or password not recognized.";return}
-    ROLE=u.role;sset(SV+"role",ROLE);VIEW=ROLE_TABS[ROLE][0];sset(SV+"view",VIEW);render();window.scrollTo(0,0)};
+    ROLE=u.role;sset(SV+"role",ROLE);VIEW=ROLE_TABS[ROLE][0];sset(SV+"view",VIEW);render();window.scrollTo(0,0);if(ROLE==="store")showMgrMsg()};
+}
+// ---------- custom message from corporate, shown to managers at login ----------
+function showMgrMsg(){
+  const t=(sget(SV+"mgrmsg","")||"").trim();if(!t)return;
+  const m=document.createElement("div");m.className="modal";
+  m.innerHTML=`<div class="box"><h3>Message from Coffee Crossing corporate</h3><p style="white-space:pre-wrap;margin:8px 0 16px">${esc(t)}</p><button class="btn alt" id="mm_ok">Got it, continue to ordering</button></div>`;
+  document.body.appendChild(m);m.querySelector("#mm_ok").onclick=()=>m.remove();
 }
 function signOut(){ROLE=null;sset(SV+"role",null);ST=null;sset(SV+"store",null);render()}
 let CART=sget(SV+"cart",{});
@@ -738,12 +745,22 @@ function vInsights(){
   O.forEach(o=>o.lines.forEach(l=>{const p=PB[l.pid],v=l.q*p.price;T+=v;N+=l.q;byS[o.store]=(byS[o.store]||0)+v;byP[p.id]=(byP[p.id]||0)+v;byC[p.cat]=(byC[p.cat]||0)+v}));
   const bars=(obj,fmtName,n)=>{const e=Object.entries(obj).sort((a,b)=>b[1]-a[1]).slice(0,n),mx=e[0][1];return e.map(r=>`<div style="margin:9px 0"><div class="sumline" style="border:0;padding:0 0 3px"><span>${fmtName(r[0])}</span><b>${usd(r[1])}</b></div><div class="bar"><i style="width:${r[1]/mx*100}%"></i></div></div>`).join("")};
   $("#view").innerHTML=`<div class="grid g4" style="margin-bottom:16px"><div class="card kpi"><div class="l">Orders</div><div class="v">${O.length}</div></div><div class="card kpi"><div class="l">Cases ordered</div><div class="v">${N.toLocaleString()}</div></div><div class="card kpi"><div class="l">Total spend</div><div class="v">${usd(T)}</div></div><div class="card kpi"><div class="l">Avg order</div><div class="v">${usd(T/O.length)}</div></div></div>
-  <div class="grid g2"><div class="card"><h3>Spend by store</h3>${bars(byS,x=>x,8)}</div><div class="card"><h3>Spend by category</h3>${bars(byC,x=>x,8)}</div><div class="card" style="grid-column:1/-1"><h3>Top 10 products by spend</h3>${bars(byP,x=>PB[x].name,10)}</div></div>`+meetHTML();wireMeet();
+  <div class="grid g2"><div class="card"><h3>Spend by store</h3>${bars(byS,x=>x,8)}</div><div class="card"><h3>Spend by category</h3>${bars(byC,x=>x,8)}</div><div class="card" style="grid-column:1/-1"><h3>Top 10 products by spend</h3>${bars(byP,x=>PB[x].name,10)}</div></div>`+msgHTML()+meetHTML();wireMsg();wireMeet();
 }
 // ---------- corporate meeting template + action items (from the Dan Cunningham call) ----------
 const MEET_SECTIONS=[["wins","Wins","What went well this week"],["shout","Manager shout-outs","Who stepped up"],["train","Training updates","New hires, skills, upcoming training"],["dist","District reports","One line per district manager"],["sched","Schedule review","Coverage gaps, events, holidays"],["act","Action items","Add one per line, check off when done"]];
 let MEET=sget(SV+"meet",{wins:"",shout:"",train:"",dist:"",sched:"",actions:[]});
 const saveMeet=()=>sset(SV+"meet",MEET);
+function msgHTML(){
+  return `<div class="card" style="margin-top:16px"><h3>Message to store managers</h3>
+  <p class="note">Managers see this as a pop-up when they log in and must click through it before ordering. Leave it empty to show nothing.</p>
+  <textarea id="mgrmsg" style="width:100%;min-height:80px;margin-top:4px" placeholder="Type your message to the managers">${esc(sget(SV+"mgrmsg","")||"")}</textarea>
+  <div class="toolbar" style="margin-top:10px"><button class="btn sm alt" id="mm_save">Save message</button><button class="btn sm out" id="mm_clear">Clear message</button></div></div>`;
+}
+function wireMsg(){
+  $("#mm_save").onclick=()=>{sset(SV+"mgrmsg",$("#mgrmsg").value.trim());toast("Message saved. Managers will see it at login")};
+  $("#mm_clear").onclick=()=>{sset(SV+"mgrmsg","");$("#mgrmsg").value="";toast("Message cleared")};
+}
 function meetHTML(){
   const open=MEET.actions.filter(a=>!a.done).length;
   return `<div class="card" style="margin-top:16px"><h3>Corporate meeting <span class="note" style="margin-left:auto">${open} open action item${open===1?"":"s"}</span></h3>
