@@ -524,14 +524,24 @@ function summary(){
   $("#sum").innerHTML=`<h3>Your order</h3><div class="note" style="margin:-4px 0 6px">Store: <b>${store().n}</b> · ${store().mgr}</div><div class="big">${T.c} item${T.c===1?"":"s"}</div><div class="note">${T.n} units total</div>
    <div class="sumbox">${lines.length?lines.map(id=>`<div class="sumline"><span>${CART[id]} × ${PB[id].name}</span></div>`).join(""):`<p class="note">Nothing yet. Add items or tap "Repeat last order".</p>`}</div>
    ${warn?`<div class="alert bad" style="font-size:12.5px"><b>${warn} item${warn>1?"s":""} out at the warehouse.</b> They'll ship as soon as they're back in.</div>`:""}
-   <label class="note"><b>Requested delivery date</b></label><input type="date" id="dd" value="${sget(SV+"dd",nd)}" min="${addd(1)}" style="width:100%;margin:4px 0 10px">
+   ${schedHTML(store().n)}
    <label class="note"><b>Notes for the warehouse</b></label><textarea id="nt" placeholder="Anything special? Substitutions OK, dock closed Friday…">${esc(sget(SV+"nt",""))}</textarea>
    <button class="btn alt" id="sub" style="width:100%;margin-top:12px;padding:14px;font-size:15px" ${T.n?"":"disabled"}>Submit order to warehouse</button>
    <p class="note" style="text-align:center;margin:8px 0 0">Sends to ${esc(DB.endpoint?"your auto-send endpoint":DB.email)} when you submit</p>`;
-  $("#dd").onchange=e=>sset(SV+"dd",e.target.value);$("#nt").oninput=e=>sset(SV+"nt",e.target.value);
+  $("#nt").oninput=e=>sset(SV+"nt",e.target.value);
   $("#sub").onclick=submit;
 }
-function nextDelivery(){let d=1;for(;d<8;d++){const w=new Date(today().getTime()+d*DAY).getDay();if(w===2||w===4)break}return addd(d)}
+const SCHED={Charlie:[[0,3,5],[1,4,6]],Jeff:[[1,4],[2,5]],Grant:[[1,4],[2,5]],Bakery:[[0,3],[1,4]],Ivy:[[0,3,5],[1,4,6]],DJ:[[0,3,5],[1,4,6]],Lena:[[1,4],[2,5]],Scottie:[[1,4],[2,5]]};
+const DOW=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+function nextOn(days,from){for(let d=from;d<from+8;d++){if(days.includes(new Date(today().getTime()+d*DAY).getDay()))return d}return from}
+function nextDelivery(){const sc=SCHED[ST]||[[1,4],[2,4]];return addd(nextOn(sc[1],1))}
+function schedHTML(n){
+  const sc=SCHED[n];if(!sc)return "";const tw=today().getDay(),od=nextOn(sc[0],0),dd=nextOn(sc[1],1);
+  const row=(lbl,days,c)=>`<div style="display:flex;align-items:center;gap:4px;margin:3px 0"><span class="note" style="width:62px"><b>${lbl}</b></span>${DOW.map((w,i)=>`<span style="flex:1;text-align:center;font-size:11.5px;padding:4px 0;border-radius:8px;${days.includes(i)?"background:"+c+";font-weight:700;color:#292929":"background:#f2f2f2;color:#aaa"};${i===tw?"outline:2px solid #292929":""}">${w}</span>`).join("")}</div>`;
+  return `<div id="sched" class="alert" style="background:#fffbe0;border:1px solid #FFCD01;margin:8px 0 10px;font-size:13px"><b>${esc(n)} schedule</b>
+   ${row("Order",sc[0],"#FFCD01")}${row("Delivery",sc[1],"#cfe9d4")}
+   <div style="margin-top:6px">Today is <b>${DOW[tw]} ${nice(iso(today()))}</b>${sc[0].includes(tw)?" · <b>order day</b>":""}${sc[1].includes(tw)?" · <b>delivery day</b>":""}.<br>Next order day: <b>${od===0?"today":nice(addd(od))}</b> · Next delivery: <b>${nice(addd(dd))}</b></div></div>`;
+}
 let LASTSUB=null;
 function submit(){
   const zero=P.filter(p=>!(CART[p.id]>0));
@@ -549,7 +559,7 @@ function submit(){
 function doSubmit(){
   const s=store(),lines=Object.keys(CART).filter(k=>CART[k]>0).map(pid=>({pid,q:CART[pid]}));if(!lines.length)return;
   const d=iso(today());DB.seq++;const mine=DB.orders.filter(o=>o.store===s.n&&o.date===d).length+1;
-  const o={no:ordNo(s,d,mine),store:s.n,mgr:s.mgr,date:d,deliver:$("#dd").value||nextDelivery(),status:"Submitted",notes:$("#nt").value,lines,log:[["Submitted",d]],ded:0,emailed:new Date().toLocaleTimeString([],{hour:"numeric",minute:"2-digit"})};
+  const o={no:ordNo(s,d,mine),store:s.n,mgr:s.mgr,date:d,deliver:nextDelivery(),status:"Submitted",notes:$("#nt").value,lines,log:[["Submitted",d]],ded:0,emailed:new Date().toLocaleTimeString([],{hour:"numeric",minute:"2-digit"})};
   DB.orders.unshift(o);save();LASTSUB=o.no;sendOrder(o);CART={};sset(SV+"cart",{});sset(SV+"nt","");VIEW="confirm";render();window.scrollTo(0,0);
 }
 // REAL AUTO-SEND: a static file cannot send email by itself. Put an EmailJS, Formspree or Zapier webhook URL in Settings
